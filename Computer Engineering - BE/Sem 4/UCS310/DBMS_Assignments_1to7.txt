@@ -1,0 +1,460 @@
+DBMS Assignments 1-7
+
+Lab Assignment–1
+1. Create table Student (Rno, Name, DOB, Gender, Class, College, City, Marks)
+2. Insert 5 records in student table
+3. Display the information of all the students
+4. Display the detail structure of student table
+5. Display Rno, Name and Class information of ‘Patiala’ students.
+6. Display information on ascending order of marks
+7. Change the marks of Rno 5 to 89.
+8. Change the name and city of Rno 9.
+9. Delete the information of ‘Amritsar’ city records
+10. Delete the records of student where marks<30.
+ANSWERS:
+1.
+create table s1 (
+Rno int,
+SName varchar(30),
+DOB date,
+Gender varchar(8),
+SClass varchar(8),
+College varchar(20),
+City varchar(10),
+Marks int);
+2.
+insert into s1
+values(01,'Rohit',TO_DATE('01/02/1980','DD/MM/YYYY'),'Male','COE5','Thapar','Patiala’, 65);
+insert into s1
+values(05, 'Ram', TO_DATE('03/12/1980', 'DD/MM/YYYY'), 'Male', 'CS4', 'IIITD', 'Delhi', 45);
+insert into s1
+values(03, 'Geeta', TO_DATE('11/05/1980', 'DD/MM/YYYY'), 'Female', 'CI8', 'Amritsar College', 'Amritsar', 46);
+insert into s1
+values(04, 'Veena', TO_DATE('24/09/1980', 'DD/MM/YYYY'), 'Female', 'ME6', 'NIT', 'Jaipur', 68);
+insert into s1
+values(09, 'Lata', TO_DATE('13/10/1980', 'DD/MM/YYYY'), 'Female', 'CO5', 'TIET', 'Patiala', 25);
+3. select * from s1;
+4. desc s1;
+5. select Rno, Sname, SClass from s1 where City=’Patiala’;
+6. select * from s1 order by Marks asc;
+7. update s1 set Marks=89 where Rno=05;
+8. update s1 set SName='Bina', City='Chennai' where Rno=09;
+9. delete from s1 where City like 'Amritsar'; or City=’Amritsar’
+10. delete from s1 where Marks<30;
+
+
+Lab Assignment-2
+1. Create table emp which has the following attributes (employee table) (empno, ename, job, sal, deptno)
+2. Insert appropriate records in above tables.
+3. Get employee no and employee name who works in dept no 10
+4. Display the employee names of those clerks whose salary > 2000
+5. Display name and sal of Salesperson & Clerks
+6. Display all details of employees whose salary between 2000 and 3000
+7. Display all details of employees whose dept no is 10, 20, or 30
+8. Display name of those employees whose commission is NULL
+9. Display dept no & salary in ascending order of dept no and with in each dept no salary should be in descending order
+10. Display name of employees that starts with ‘C’
+11. Display name of employees that ends with with ‘C’
+12. Display name of employees having two ‘a’ or ‘A’ chars in the name
+13. Display the name of the employees whose second char is ‘b’ or ‘B’
+14. Display the name of the employees whose first or last char is ‘a’ or ‘A’
+ANSWERS:
+1. create table emp(
+empno int,
+ename varchar(10),
+job varchar(10),
+sal number(7,2),
+deptno int );
+2.
+insert into emp values( 7839, 'Rohit', 'Manager', 1000, 10) ;
+insert into emp values( 7840, 'Priya', 'President', 4000, 20) ;
+insert into emp values( 7823, 'Shyam', 'Assistant', 5000, 30) ;
+insert into emp values( 7339, 'Anita', 'Manager', 1000, 10) ;
+insert into emp values( 7271, 'Manish', 'Clerk', 4000, 40) ;
+insert into emp values( 7548, 'Gitika', 'Analyst', 1200, 50) ;
+insert into emp values( 7182, 'Nandini', 'Salesman', 1500, 60) ;
+insert into emp values( 7833, 'Karnika', 'Analyst', 1200, 50) ;
+insert into emp values( 7327, 'Sona', 'Manager', 2000, 10) ;
+insert into emp values( 7289, 'Tia', 'Clerk', 1000, 20) ;
+insert into emp values( 7282, 'Sia', 'Assistant', 3000, 30) ;
+insert into emp values( 7317, 'Naman', 'Manager', 2000, 10) ;
+insert into emp values( 7393, 'Garima', 'Clerk', 1000, 40) ;
+insert into emp values( 7292, 'Keerthana', 'Analyst', 1000, 50) ;
+insert into emp values( 7221, 'Harsh', 'Salesman', 2000, 60) ;
+insert into emp values( 7383, 'Ram', 'Analyst', 2000, 50) ;
+3. select empno, ename from emp where deptno = 10;
+4. select ename from emp where sal > 2000;
+5. select ename, sal from emp where job IN ('Salesman', 'Clerk');
+6. select * from emp where sal > 2000 and sal < 3000;
+7. select * from emp where deptno in (10,20,30)
+8. select ename from emp where sal is NULL
+9. select deptno, sal from emp order by deptno asc, sal desc
+10. select ename from emp where ename like 'C%'
+11. select ename from emp where ename like '%C'
+12. select ename from emp where ename like '%a%a%' or ename like '%A%A%*
+13. select ename from emp where ename like '_b%' or ename like '_B%';
+14. select ename from emp
+where ename like 'a%a' or ename like 'a%A'
+or ename like 'A%a' or ename like 'A%A';
+
+
+Assignment 3
+Write queries to:
+1. Display the system date
+2. Display current day
+3. Display current month and spell out year
+4. Display spell out current date
+5. Check whether it is AM or PM right now
+6. Display the date of next Friday
+7. Round the system date on month
+8. Truncate the system date on month
+9. Round the system date on year
+10. Truncate the system date on year 11. Find the day after three days
+Queries Based on EMP table
+12. Display day of date of joining column
+13. Display those employees who join the company on Monday
+14. Display those employees who join the company this month
+15. Display those employees who join the company in last 30 days
+Create a table train having three four columns
+16. Train Number, date of Departure, time of departure, time of arrival
+17. Insert five columns in train table
+18. Display all the records
+19. Display the time values inserted in the columns
+20. Display those trains which arrived on PM
+21. Display train number who are going to depart in next on hour.
+ANSWERS:
+1. select sysdate from dual;
+2. select to_char(sysdate, 'day') from dual;
+3. select to_char(sysdate, 'mon year') from dual;
+4. select to_char(sysdate, 'ddspth') from dual;
+5. select to_char(sysdate, ‘PM’) from dual;
+6. select lower(next_day(sysdate, 'friday')) from dual;
+7. select round (to_date(sysdate),'MON') from dual;
+8. select trunc(to_date(sysdate),'MON') from dual;
+9. select round(to_date(sysdate),'year') from dual;
+10. select trunc(to_date(sysdate),'year') from dual;
+11. select to_char(sysdate+3, 'day') from dual;
+12. select ename, to_char(hiredate, 'day') as day_of_hire from emp;
+13. select ename from emp where to_char(hiredate, 'fmday') = 'monday';
+14. select ename from emp where to_char(hiredate, 'mon') = to_char(sysdate, 'mon');
+15. select ename from emp where hiredate > sysdate-30 and hiredate <sysdate;
+16. create table train(
+Tno number(10),
+Departure_date date,
+Departure_time timestamp,
+Arrival_time timestamp);
+17.
+insert into train values (101, '01-apr-21', '01-apr-21 5.15.00 pm', '02-apr-21 3.00.00 am');
+insert into train values (102, '02-apr-21', '01-apr-21 10.00.00 pm', '02-apr-21 3.15.00 am');
+insert into train values (103, '03-apr-21', '03-apr-21 2.30.00 pm', '03-apr-21 10.45.00 am');
+insert into train values (104, '04-apr-21', '04-apr-21 11.20.00 pm', '05-apr-21 7.00.00 am');
+insert into train values (101, '05-apr-21', '05-apr-21 4.25.00 pm', '05-apr-21 11.45.00 am');
+18. select * from train;
+19. elect to_char(Departure_time, 'HH:MI:SS am') as "Departure Time", to_char(Arrival_time, 'HH:MI:SS am') as "Arrival Time" from train;
+20. select * from train where to_char(Arrival_time, 'pm')='pm';
+21. select Tno from train where Departure_time between sysdate and sysdate+1/24;
+
+
+Lab Assignment–4
+Q1) Use the following functions →
+1. chr (n):
+2. cancat(char1,char2):
+3. instr(string,char):
+4. length(n):
+5. lpad(char1 ,n [,char2]):
+6. ltrim(string [,char(s)]):
+7. rpad(char1 ,n [,char2]):
+8. rtrim(string [,char(s)]):
+9. replace(char ,search_string , replacement_string):
+10. substr(string ,position ,substring length):
+11. initcap(char):
+12. lower(string):
+13. upper(string):
+14. translate(char ,from string ,to string):
+15. abs(n):
+16. ceil(n):
+17. cos(n):
+18. exp(n):
+19. floor(n):
+20. mod(m ,n):
+21. power(x ,y):
+22. round(x [,y]):
+23. sign(n):
+24. sqrt(n);
+25. trunc(x ,n):
+26. sysdate:
+27. add_months(d ,n):
+28. last_day():
+29. months_between(date1 ,date2):
+30. next_day(date ,char):
+31. greatest(expr):
+32. least(expr):
+Q2) Display current time in hour : min : sec format
+Q3) Display salary + commission of emp table
+Q4) Store any date value in hiredate column of table ?
+Q5) Display name of employee(s) who join the company in 1985 ?
+Q6) Display name of the employee(s) who join the company this year ?
+ANSWERS:
+1. select chr (97) from dual;
+2. select concat('a','b') from dual;
+3. select instr('anamika','n') from dual; //tells position of the 2nd string
+4. select length('anamika') from dual;
+5. select lpad('class', 10, '*') from dual;
+6. select ltrim('class','c') from dual; //removes the char (if present) from extreme left
+7. select rpad('class', 10, '*') from dual;
+8. select rtrim('class','s') from dual;
+9. select replace('goose' ,'o', 'e') from dual;
+10. select substr('anamika', 2, 4) from dual; //takes from 2-4 in the given string
+11. select initcap('a') from dual; //first letter capson
+12. select lower('Anamika') from dual;
+13. select upper('Anamika') from dual;
+14. select translate('goose' ,'o' ,'e') from dual;
+15. select abs(-11) from dual;
+16. select ceil(4.9) from dual;
+17. select cos(1.5708) from dual;
+18. select exp(1) from dual;
+19. select floor(1.5) from dual;
+20. select mod(18,4) from dual; //quotient
+21. select power(2,4) from dual;
+22. select round(1.23) from dual;
+23. select sign(1.23) from dual;
+24. select sqrt(2) from dual;
+25. select trunc(1.23, 1) from dual; //truncates to 1 decimal place
+26. select sysdate from dual;
+27. select add_months('01-FEB-2022',2) from dual;
+28. select last_day(SYSDATE) from dual;
+29. select months_between('01-FEB-2022', '01-MAR-2022') from dual;
+30. select next_day('21-FEB-2022','Tuesday') from dual;
+31. select greatest(30,22,34) from dual;
+32. select least(30,22,34) from dual;
+33. select to_char(sysdate, 'hh:mm:ss') from dual;
+create table emp (
+empno number,
+ename varchar(50),
+job varchar(100),
+deptno number,
+sal number,
+commission number,
+hiredate date);
+insert into emp values(1, 'A', 'Sales', 4, 100000,100,TO_DATE('01/01/2020', 'DD/MM/YYYY') );
+insert into emp values(2, 'B', 'Accounts', 2, 200000,200,TO_DATE('01/01/2020', 'DD/MM/YYYY') );
+insert into emp values(3, 'C', 'Sales', 10, 50000,500,TO_DATE('01/01/2020', 'DD/MM/YYYY') );
+34. select sal+commission from emp;
+35. select hiredate from emp;
+36. SELECT ename FROM emp WHERE hiredate<TO_DATE('01/01/1986', 'DD/MM/YYYY') and hiredate>=TO_DATE('01/01/1985', 'DD/MM/YYYY');
+37. SELECT ename FROM emp WHERE hiredate<TO_DATE('01/01/2023', 'DD/MM/YYYY') and hiredate>=TO_DATE('01/01/2022', 'DD/MM/YYYY');
+
+
+
+Lab Assignment–5
+1. Create table emp which has the following attributes (employee table)
+(@empno, ename, job, sal, deptno)
+Where empno is primary key, ename is unique, job in (Prof,
+AP, and Lect), sal is not NULL, and deptno is foreign key
+2. Create table dept which has the following attributes (department table)
+(@deptno, dname)
+Where deptno is primary key, dname in (Acc, comp, elect)
+3. Create table S which has the following attributes (Salesperson table)
+(@sno, sname, city)
+Where sno is primary key
+4. Create table P which has the following attributes (Part table)
+(@pno, pname, color)
+Where pno is primary key
+5. Create table J which has the following attributes (ProJect table)
+(@jno, jname, city)
+Where jno is primary key
+6. Create table SPJ which has the following attributes
+(@ (sno, pno, jno), qty)
+Where combination of (sno, pno, jno) is primary key, also sno, pno, jno are foreign keys
+7. Insert appropriate records in above tables.
+ANSWERS:
+1. create table dept(
+deptno number PRIMARY KEY,
+dname varchar(20) UNIQUE);
+2. create table emp(
+empno number primary key,
+ename varchar(20) unique,
+job varchar(20),
+sal number not null,
+deptno number references dept(deptno));
+3. create table S(
+sname varchar(20),
+sno number primary key,
+scity varchar(20));
+4. create table P(
+pname varchar(20),
+pno number primary key,
+color varchar(20));
+5. create table J(
+jname varchar(20),
+jno number primary key,
+city varchar(20));
+6. create table spj(
+sno number references S(sno),
+pno number references P(pno),
+jno number references J(jno),
+primary key(sno, pno, jno)
+);
+7.
+insert into emp values (1001, 'Simon', 'Prof', 15000, 2);
+insert into emp values (1002, 'Nia', 'Lec', 12000, 1);
+insert into emp values (1001, 'Clarke', 'AP', 10000, 2);
+insert into dept values (1, 'Comp');
+insert into dept values (2, 'Acc' );
+insert into dept values (3, 'Elect');
+insert into S values (1001, 'Magnus', 'Seattle');
+insert into S values (1002, 'Alex', 'Chicago' );
+insert into S values (1003, 'Clary', 'Boston');
+insert into P values (2110, 'Hammer', 'Red');
+insert into P values (2111, 'Screw', 'Silver');
+insert into P values (2113, 'Rope', 'Brown');
+insert into J values (1, 'Hotel Renovation', 'Seattle');
+insert into J values (2, 'Villa Renovation', 'Seattle');
+insert into J values (3, 'Building Foundation', 'Seattle');
+insert into SPJ values (102, 2111, 3, 100);
+insert into SPJ values (103, 2110, 4, 10);
+insert into SPJ values (101, 2110, 2, 9);
+
+
+Lab Assignment–6
+Q1) Check the structure of tables.
+Q2) Check the constraint name for applied constraints?
+Q3) Drop the unique constraint on ENAME
+Q4) Drop the Foreign Key constraint on DEPTNO
+Q5) Add Foreign Key constraint on DEPTNO
+Q6) Change Data type of ENAME
+Q7) Change width of DNAME
+Q8) Add COMM column in EMP table
+Q9) Drop CITY column from J table
+Q10) Create duplicate copy of EMP table
+Q11) Copy structure of DEPT table in another table with different column names
+Q12) Change the name and job of the employee whose EMPNO =100
+Q13) Delete the record of employee who belong to computer department
+Q14) Drop DEPT Table
+Q15) Drop duplicate table of EMP table
+Answers:
+1. describe emp;
+describe dept;
+describe s;
+describe p;
+describe j;
+describe spj;
+2. select constraint_name, constraint_type, table_name, search_condition
+from user_constraints where table_name='emp';
+select constraint_name, constraint_type, table_name, search_condition
+from user_constraints where table_name='dept';
+select constraint_name, constraint_type, table_name, search_condition
+from user_constraints where table_name='P';
+select constraint_name, constraint_type, table_name, search_condition
+from user_constraints where table_name='S';
+select constraint_name, constraint_type, table_name, search_condition
+from user_constraints where table_name='J';
+select constraint_name, constraint_type, table_name, search_condition
+from user_constraints where table_name='SPJ';
+3. alter table emp drop constraints ename_unique;
+4. alter table emp drop constraints deptno_foreignkey;
+5. alter table emp add constraint deptno_foreignkey foreign key (deptno) references dept (deptno);
+6. alter table emp modify ename char(100);
+7. alter table dept modify dname varchar(100);
+8. alter table emp add comm number(10);
+9. alter table J drop column city;
+10. create table emp_new as select * from emp;
+11. create table dept_new(deptno_new, dname_new) as select deptno, dname from dept where 1=0;
+12. update emp set ename='Caleb', job='Prof' where empno=100;
+13. delete from emp where deptno=1;
+14. delete from dept;
+drop table dept;
+select * from dept;
+15. delete from emp_new;
+drop table emp_new;
+select *from emp_new;
+
+
+
+Assignment 7
+(RDBMS APP: Order Entry System)
+Table 1: SalesPeople
+Snum is Primary key
+Sname is Unique constraint
+Table 2: Customers
+Cnum is Primary Key
+City has not null constraint .
+Snum is foreign key constraint refers Snum column of SalesPeople table.
+Table 3: Orders
+Onum is Primary key
+Cnum is foreign key refers to Cnum column of Customers table.
+Snum is foreign key refers Snum column of SalesPeople table.
+1) Count the number of Salesperson whose name begin with ‘a’/’A’.
+2) Display all the Salesperson whose all orders worth is more than Rs. 2000.
+3) Count the number of Salesperson belonging to Newyork.
+4) Display the number of Salespeople belonging to Landon and belonging to Paris.
+5) Display the number of orders taken by each Salesperson and their date of orders.
+6) Write a query that counts the number of Salespeople registering orders for each day.
+7) Write a query that selects the first customer in alphabetical order, whose name begins with ‘G’.
+8) Find out the largest orders for Snum 1002 & 1007.
+9) Find out the maximum single order amount of a Salesperson over Rs. 3000 in a day.
+10) Find out the no. of Salesperson who belongs to same city and have same commission percentage.
+ANSWERS:
+
+Table SalesPeople:
+create table SalesPeople(
+snum number(5) constraint pk_sp primary key,
+sname varchar(15) constraint u_sp unique,
+city varchar(20),
+comm number(5,2)
+);
+insert into SalesPeople values (1001, 'Peel', 'London', 0.12);
+insert into SalesPeople values (1002, 'Serres', 'Sanjose', 0.13);
+insert into SalesPeople values (1004, 'Motika', 'Landon', 0.11);
+insert into SalesPeople values (1007, 'Rifkin', 'Barcelona', 0.15);
+insert into SalesPeople values (1003, 'Axelrod', 'Newyork', 0.10);
+select * from SalesPeople;
+
+Table Customers:
+create table Customers(
+cnum number(5) constraint pk_c primary key,
+cname varchar(15),
+city varchar(20) NOT NULL,
+snum number(5),
+constraint fk_c foreign key (snum) references SalesPeople(snum)
+);
+insert into Customers values (2001, 'Hoffman', 'London', 1001);
+insert into Customers values (2002, 'Giovanni', 'Rome', 1003);
+insert into Customers values (2003, 'Liu', 'Sanjose', 1002);
+insert into Customers values (2004, 'Grass', 'Berlin', 1002);
+insert into Customers values (2006, 'Clemens', 'London', 1001);
+insert into Customers values (2008, 'Cisneros', 'Sanjose', 1007);
+insert into Customers values (2007, 'Pereira', 'Rome', 1004);
+select * from Customers;
+
+Table Orders:
+create table Orders(
+onum number(5) constraint pk_o primary key,
+amt number(7,2),
+odate date,
+cnum number(5),
+constraint fk_oc foreign key (cnum) references Customers(cnum),
+snum number(5),
+constraint fk_os foreign key (snum) references SalesPeople(snum)
+);
+insert into Orders values (3001, 18.69, to_date('3-OCT-1990', 'DDSP-MON-YYYY'), 2008, 1007);
+insert into Orders values (3003, 767.19, to_date('3-OCT-1990', 'DDSP-MON-YYYY'), 2001, 1001);
+insert into Orders values (3002, 1900.10, to_date('3-OCT-1990', 'DDSP-MON-YYYY'), 2007, 1004);
+insert into Orders values (3005, 5160.45, to_date('3-OCT-1990', 'DDSP-MON-YYYY'), 2003, 1002);
+insert into Orders values (3006, 1098.16, to_date('3-OCT-1990', 'DDSP-MON-YYYY'), 2008, 1007);
+insert into Orders values (3009, 1713.23, to_date('4-OCT-1990', 'DDSP-MON-YYYY'), 2002, 1003);
+insert into Orders values (3007, 75.75, to_date('4-OCT-1990', 'DDSP-MON-YYYY'), 2004, 1002);
+insert into Orders values (3008, 4273.00, to_date('5-OCT-1990', 'DDSP-MON-YYYY'), 2006, 1001);
+insert into Orders values (3010, 1309.95, to_date('6-OCT-1990', 'DDSP-MON-YYYY'), 2004, 1002);
+insert into Orders values (3011, 9891.88, to_date('6-OCT-1990', 'DDSP-MON-YYYY'), 2006, 1001);
+select * from Orders;
+1. select count(*) as COUNT from SalesPeople group by sname having lower(sname) like 'a%';
+2. select * from SalesPeople where snum in (Select snum from Orders group by snum having sum(amt)>2000);
+3. select count(*) as "SalesPeople from NEWYORK" from SalesPeople where lower(city)='newyork';
+4. select city, count(*) from SalesPeople group by city having lower(city) in ('paris', 'london');
+5. select snum, count(onum) from Orders group by snum order by snum;
+6. select odate, count(distinct snum) from Orders group by odate;
+7. select * from (select cname from Customers where lower(cname) like 'g%' order by cname) where rownum<2;
+8. select snum, max(amt) from Orders where snum=1002 or snum=1007 group by snum;
+9. select snum, odate, max(amt) from Orders where amt>=3000 group by (snum,odate);
+10. select count(*) from Salespeople m, SalesPeople n where m.city=n.city and m.comm=n.comm and m.sname!=n.sname;
