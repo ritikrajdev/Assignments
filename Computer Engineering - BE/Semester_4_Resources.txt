@@ -1,0 +1,9 @@
+These are semester 4 resources for BE, COE at TIET.
+
+
+Drive link: https://drive.google.com/drive/u/2/folders/1slpF1BF1Qp-X64ExLxUVoBep-AX1Frtx 
+Buggy: https://sites.google.com/thapar.edu/buggy/home 
+DBMS site: https://sites.google.com/thapar.edu/dbms2021/video-sessions-on-dbms?authuser=2 
+DAA lectures: https://sites.google.com/a/thapar.edu/shreelekha_pandey/courses/lecture-recordings-ucs415 
+DAA Class: https://docs.google.com/spreadsheets/d/1qX8E0plEVbK3Hhnqyn8yX0Nlu-wm6CHn3VbPuWtho5M/edit#gid=0 
+Complexities (DAA): https://docs.google.com/spreadsheets/d/1yt99cvDGOeK2lCKzFSKmixnNeT5UK4PV/edit?usp=sharing&ouid=115527105330071830582&rtpof=true&sd=true

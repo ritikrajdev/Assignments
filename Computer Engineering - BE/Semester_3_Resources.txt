@@ -1,0 +1,27 @@
+These are the resources for semester 3 at BE, TIET.
+
+SEMESTER 1
+Combined drive for all : https://drive.google.com/drive/u/4/starred 
+Lecture Recordings of Data Structures and Lecture notes of Numerical analysis and DMS
+https://drive.google.com/folderview?id=1QF1ozVZR_8h65cCe5utZHPkFs7XBVtsd 
+https://drive.google.com/drive/u/0/folders/1xkT_6R2GxMDj87T1ecQMFUHTB3UJZ9_D : Abdul Bari
+
+NA lectures
+https://drive.google.com/drive/folders/1IUntMfBEDvfuCtLJmzekdooxqUZYo6I9?usp=sharing
+https://fac.ksu.edu.sa/sites/default/files/numerical_analysis_9th.pdf   : NA book
+
+
+Lecture Recordings of Operating system
+http://tiny.cc/tbh-ucs303-2021 
+
+Drive link for lecture recordings of DMS
+https://drive.google.com/drive/folders/1eU0Wj4pIDT_yHyQzTzUvQhzmMGwugfBM 
+
+OS slides, Galvin slides
+https://sites.google.com/thapar.edu/nakama-takara/ucs303/ucs303-lectures?authuser=0
+https://www.youtube.com/playlist?list=PLdo5W4Nhv31a5ucW_S1K3-x6ztBRD-PNa
+
+Linux Tutorial YT playlist
+https://sites.google.com/thapar.edu/nakama-takara/ucs303/ucs303-lectures?authuser=0 
+
+
